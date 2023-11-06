@@ -53,12 +53,19 @@ h3 {
 
 p {
   font-family: var(--baseText);
+  margin: 1.5rem;
 }
 
 i {
   line-height: 0;
   width: fit-content;
 }
+
+a, a:link, a:visited {
+  color:var(--dark);
+  text-decoration: none;
+}
+
 
 /* NAV */
 
@@ -85,6 +92,20 @@ nav {
   color: var(--dark);
   font-size: 1.75rem;
   font-family: var(--baseText);
+  position: relative;
+}
+
+.Nav-links > a:hover::after {
+  content:' ';
+  background-color: var(--accent1);
+  width:75%;
+  height: .25rem;
+  z-index: 20;
+  position:absolute;
+  bottom:0;
+  left:50%;
+  transform: translate(-50%);
+  box-shadow: 0 0 0 1px var(--dark);
 }
 
 /* HERO */
@@ -96,7 +117,6 @@ nav {
   justify-content: space-between;
   align-items: center;
   width:100%;
-  /* min-height: 33vh; */
   height: fit-content;
 }
 
@@ -118,6 +138,11 @@ nav {
   font-size: 4rem;
 }
 
+.Socials-card:hover {
+  background-color: var(--dark);
+  color: var(--white)
+}
+
 
 /* Headline */
 .Headline {
@@ -136,7 +161,6 @@ nav {
   text-decoration: line-through;
   text-transform: uppercase;
   color: var(--faded);
-  /* line-height: 0%; */
   text-align: right;
   font-size: 3rem;
 }
@@ -179,6 +203,10 @@ nav {
   width:100%;
 }
 
+.Project {
+  margin: 2rem;
+}
+
 .Projects-headline {
   display:flex;
   flex-direction: column;
@@ -186,14 +214,14 @@ nav {
   height:30rem;
 }
 
-.Project {
-  /* width:100%; */
-}
-
 .Project-hero{
   height: 300px;
   position:relative;
   top:0px; bottom:0px; left:0px; right:0px;
+}
+
+.Project-hero a:hover {
+  color: var(--accent2);
 }
 
 .Project-image {
@@ -253,7 +281,7 @@ nav {
   width: 100%;
 }
 
-.columns-2 > div {
+.columns-2 > * {
   width:50%;
 }
 
@@ -299,7 +327,7 @@ nav {
 
 .floatCard .Headline-separator {
   outline: none;
-  height:.5rem;
+  height:.5em;
 }
 
 /* STYLE UTILITIES */
@@ -321,7 +349,6 @@ nav {
 }
 
 .border-solid {
-  /* outline: solid var(--dark) .5px; */
   box-shadow: 0 0 0 1px var(--dark);
 }
 
