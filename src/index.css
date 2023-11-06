@@ -1,13 +1,364 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+:root {
+  --accent1: #d1F960;
+  --accent2: #FF351A;
+  --light: #EFEAE7;
+  --white: #FFFFFF;
+  --dark: #171717;
+  --faded: #93847B;
+  --displayText: "Belleza";
+  --baseText: "Space Grotesk";
+  font-size: 62.5%;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin:0;
+}
+
+/* EXPERIMENTAL AREA */
+
+
+/* DEFAULTS */
+body {
+  color: var(--dark);
+  background-color: var(--light);
+  width:100%;
+  font-size: 2rem;
+  /* margin:1rem; */
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: var(--displayText);
+  font-weight: 100;
+}
+
+h1 {
+  font-size: 5rem;
+  font-weight: 100;
+  line-height: 95%;
+}
+
+h2 {
+  font-size: 10rem;
+  text-align: center;
+  margin-block-end: .25rem;
+  margin-block-start: .25rem;
+}
+
+h3 {
+  margin-block-end: .25rem;
+  margin-block-start: .25rem;
+  padding:1rem;
+}
+
+p {
+  font-family: var(--baseText);
+}
+
+i {
+  line-height: 0;
+  width: fit-content;
+}
+
+/* NAV */
+
+nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  outline: .5px;
+  outline-style: solid;
+  outline-color: var(--dark);
+  padding:.5rem;
+}
+
+.Nav-links {
+  display: flex;
+  justify-content: right;
+}
+
+.Nav-links > a {
+  padding:1.75rem;
+  line-height: 0;
+  text-decoration: none;
+  color: var(--dark);
+  font-size: 1.75rem;
+  font-family: var(--baseText);
+}
+
+/* HERO */
+
+.Hero {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  width:100%;
+  /* min-height: 33vh; */
+  height: fit-content;
+}
+
+.Hero-header {
+  flex-basis: 1;
+  padding: 0rem 1rem 0rem 2rem;
+}
+
+.Socials {
+  max-width:40%;
+}
+
+.Socials-card {
+  min-height: 50%;
+  aspect-ratio: 1/1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 4rem;
+}
+
+
+/* Headline */
+.Headline {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.Headline-text {
+  padding-top:3rem;
+  padding-bottom: 3rem;
+}
+
+.Headline-text > p {
+  text-decoration: line-through;
+  text-transform: uppercase;
+  color: var(--faded);
+  /* line-height: 0%; */
+  text-align: right;
+  font-size: 3rem;
+}
+
+.Headline-text > p:last-child {
+  color: var(--accent2);
+  text-decoration: none;
+}
+
+.Headline-separator {
+  height: 2.5rem;
+  width:100%;
+}
+
+/* ABOUT */
+
+.About {
+  height:fit-content;
+  width:100%;
+  /* height: fit-content; */
+  position: relative;
+  top:0px; bottom:0px; left:0px; right:0px;
+  z-index: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ContentCard {
+  margin: 2.5rem;
+  padding: 2rem;
+  z-index: 10;
+}
+
+/* PROJECTS */
+
+.Projects {
+  display: flex;
+  flex-direction: column;
+  width:100%;
+}
+
+.Projects-headline {
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  height:30rem;
+}
+
+.Project {
+  /* width:100%; */
+}
+
+.Project-hero{
+  height: 300px;
+  position:relative;
+  top:0px; bottom:0px; left:0px; right:0px;
+}
+
+.Project-image {
+  background-color: var(--accent1);
+  height:100%;
+}
+
+.Project-image > img {
+  filter:grayscale();
+  object-fit: cover;
+  width:100%;
+  height:100%;
+  mix-blend-mode: multiply;
+  opacity:50%;
+  display:block;
+}
+
+.Project-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Project-footer {
+  display:flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: start;
+  width: 100%;
+}
+
+.Project-tools{
+  flex-basis: 33%;
+}
+
+.Project-tools > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 6rem;
+}
+
+.Project-summary {
+  flex-basis: 66%;
+  padding:3rem;
+}
+
+
+/* LAYOUT UTILITIES */
+
+.columns-2 {
+  display:flex;
+  flex-direction: row;
+  justify-content: end;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.columns-2 > div {
+  width:50%;
+}
+
+.square {
+  aspect-ratio: 1;
+}
+
+.BgGrid {
+  width: 100%;
+  position: absolute;
+  top:0px; bottom:0px; left:0px; right:0px;
+  height:100%;
+  z-index: -10;
+}
+
+.floatCard {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  width: 33%;
+  z-index: 10;
+  text-align: center;
+  display:flex;
+}
+
+.floatCard > div {
+  width:100%;
+}
+
+.floatCard::after{
+  content:'';
+  position: absolute;
+  top:0px; bottom:0px; left:0px; right:0px;
+  transform: translate(.5rem,.5rem);
+  width: 100%;
+  height: 100%;
+  background: var(--white);
+  z-index: -1;
+  box-shadow: 0 0 0 1px var(--dark);
+  text-align: center;
+}
+
+.floatCard .Headline-separator {
+  outline: none;
+  height:.5rem;
+}
+
+/* STYLE UTILITIES */
+
+.background-accent1 {
+  background-color: var(--accent1);
+}
+
+.background-accent2 {
+  background-color: var(--accent2);
+}
+
+.background-light {
+  background-color: var(--light);
+}
+
+.background-white{
+  background-color: var(--white);
+}
+
+.border-solid {
+  /* outline: solid var(--dark) .5px; */
+  box-shadow: 0 0 0 1px var(--dark);
+}
+
+.border-dashed {
+  outline: dashed var(--dark) .5px;
+}
+
+.texture-noise1 {
+  background-image: url("../public/images/lightGrainLg.png");
+  background-size: 500px 100%;
+  background-repeat: no-repeat;
+  background-blend-mode: screen;
+}
+
+.texture-noise2 {
+  background-image: url("../public/images/darkGrainLg.png");
+  background-size: 500px 100%;
+  background-repeat: no-repeat;
+  background-blend-mode: multiply;
+}
+
+.texture-waves {
+  background-image: url("../public/images/waves.jpg");
+  background-size: 200px 200px;
+  background-repeat: repeat;
+  background-blend-mode: screen;
+}
+
+.textAlign-center {
+  text-align: center;
+}
+
+.smallText {
+  font-size: 1rem;
+}
+
+.highlight{
+  display: inline-block;
+  transform: skew(-15deg);
 }
