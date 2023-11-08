@@ -305,6 +305,7 @@ nav {
 }
 
 .Project-summary {
+  max-width: fit-content;
   flex-basis: 66%;
   padding:3rem;
 }
@@ -315,11 +316,18 @@ nav {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
 }
 
 .Project-links > a {
   padding:2rem;
+  padding-bottom: .5rem;
+}
+
+.Project-links-disclaimer {
+  padding:0px;
+  margin:auto;
+  width:100%;
 }
 
 @media (min-width:600px) {
