@@ -30,7 +30,7 @@ html {
 
 body {
   color: var(--dark);
-  /* background-color: var(--light); */
+  background-color: var(--light);
   width:100%;
   /* margin:1rem; */
 }
@@ -447,8 +447,7 @@ nav {
   background-image: url("../public/images/waves.jpg");
   background-size: 200px 200px;
   background-repeat: repeat;
-  background-blend-mode: screen;
-  transform: translate3d(0,0,0);
+  background-blend-mode: lighten;
 }
 
 .textAlign-center {
