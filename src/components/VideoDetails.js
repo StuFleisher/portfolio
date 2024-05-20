@@ -3,7 +3,6 @@ import { useRef, useEffect, useState } from "react";
 import videos from "../data/videos";
 
 const MARGIN = 20;
-const PLAYER_SCALE = .8;
 
 export default function VideoDetails() {
   const { videoId } = useParams();
