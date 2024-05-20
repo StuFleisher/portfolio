@@ -220,6 +220,7 @@ nav {
   margin: 2.5rem;
   padding: 2rem;
   z-index: 10;
+  position:relative;
 }
 
 @media (min-width:768px){
@@ -249,6 +250,12 @@ nav {
 
 .Project-hero{
   height: 300px;
+  position:relative;
+  top:0px; bottom:0px; left:0px; right:0px;
+}
+
+.Video-hero {
+  height:200px;
   position:relative;
   top:0px; bottom:0px; left:0px; right:0px;
 }
@@ -499,6 +506,9 @@ nav {
 .textAlign-center {
   text-align: center;
 }
+.textAlign-left {
+  text-align: left;
+}
 
 .smallText {
   font-size: 1rem;
@@ -519,4 +529,9 @@ nav {
   background-image: url("../public/images/h-waves-light.png");
   background-size: 150px 100px;
   background-repeat: repeat;
+}
+
+.fullwidth {
+  width:100%;
+  flex-basis: 100%;
 }
