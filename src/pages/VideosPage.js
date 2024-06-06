@@ -18,9 +18,7 @@ export default function VideosPage({ useBorder }) {
     videos;
 
   return (
-    <div
-      className={`VideosPage`}
-    >
+    <div className='VideosPage'>
       <div className="filterVideoForm border-solid background-accent2 texture-noise1">
 
         <form>
@@ -41,9 +39,13 @@ export default function VideosPage({ useBorder }) {
           </select>
         </form>
       </div>
-      {activeVideos.map((video) => (
-        <VideoCard video={video} key={video.id} />
-      ))}
+      <div
+        className='VideosPage-videos'
+      >
+        {activeVideos.map((video) => (
+          <VideoCard video={video} key={video.id} />
+        ))}
+      </div>
     </div>
   );
 }
